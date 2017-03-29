@@ -1,0 +1,16 @@
+.field-name{
+    width:88px;
+    height:auto;
+    text-align:right;
+    display:inline-block;
+    margin:10px 0;
+}
+.icon-container{
+    width:135px;
+    height:135px;
+    display:inline-block;
+}
+.icon-container img{
+    width:100%;
+    height:100%;
+}

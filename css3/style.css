@@ -1,0 +1,17 @@
+.container{
+    width:750px;
+    height:300px;
+    background-color:black;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    align-content:center; //换行后的对齐方式
+}
+.container .item{
+    width:160px;
+    height:50px;
+    background-color:#fff;
+}
+

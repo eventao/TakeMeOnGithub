@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <link rel="stylesheet" href="./style/form.css">
+</head>
+
+<body>
+<form id="formContainer"
+        style="width:480px;" action="./">
+    <fieldset>
+        <legend>注册信息</legend>
+        <div class="field-name">
+            <label for="userName">用户名：</label>
+        </div>
+        <input required maxlength="15"
+                type="text" name="userName" id="userName">
+        <br>
+        <div class="field-name">
+            <label for="password">密码：</label>
+        </div>
+        <input required minlength="4"
+               maxlength="15"
+                type="password" id="password" name="password">
+        <br>
+        <div class="field-name">
+            <label for="confirmPwd">确认密码：</label>
+        </div>
+        <input required minlength="6"
+               maxlength="15"
+                type="password" id="confirmPwd">
+        <br>
+        <div class="field-name">
+            <label for="email">邮箱：</label>
+        </div>
+        <input required
+                type="email" id="email" name="email">
+        <br>
+        <div class="field-name">
+            <label for="mobileNumber">手机号码：</label>
+        </div>
+        <input required
+                type="number" name="mobileNumber" id="mobileNumber">
+        <br>
+        <div class="field-name">
+            <label>
+                头像
+            </label>
+        </div>
+        <div class="icon-container">
+            <img src="./images/icon.jpg" alt="头像">
+            <input type="file" name="icon">
+        </div>
+
+    </fieldset>
+    <fieldset>
+        <legend>用户基本信息</legend>
+        <div class="field-name">
+            <label for="name">姓名：</label>
+        </div>
+        <input type="text" name="name" id="name">
+        <br>
+        <div class="field-name">
+            <label>性别：</label>
+        </div>
+        <label for="genderMan">男</label>
+        <input name="gender"
+               type="radio" id="genderMan">
+        <label for="genderWomen">女</label>
+        <input type="radio"
+               name="gender" id="genderWomen">
+        <br>
+        <div class="field-name">
+            <label for="age">年龄：</label>
+        </div>
+        <input type="number" name="age" id="age">
+        <br>
+        <div class="field-name">
+            <label>地址：</label>
+        </div>
+        <label for="province">省</label>
+        <select name="province" id="province">
+            <option value="">--请选择--</option>
+            <option value="四川">四川</option>
+            <option value="重庆">重庆</option>
+            <option value="云南">云南</option>
+            <option value="贵州">贵州</option>
+            <option value="湖南">湖南</option>
+            <option value="湖北">湖北</option>
+        </select>
+        <label for="city">市</label>
+        <select name="city" id="city">
+            <option value="">--请选择--</option>
+            <option value="成都">成都</option>
+            <option value="绵阳">绵阳</option>
+            <option value="雅安">雅安</option>
+            <option value="广元">广元</option>
+            <option value="南充">南充</option>
+        </select>
+        <label for="district">区</label>
+        <select name="district" id="district">
+            <option value="">--请选择--</option>
+            <option value="锦江区">锦江区</option>
+            <option value="武侯区">武侯区</option>
+            <option value="成华区">成华区</option>
+            <option value="青羊区">青羊区</option>
+            <option value="金牛区">金牛区</option>
+            <option value="郫都区">郫都区</option>
+            <option value="双流县">双流县</option>
+            <option value="温江区">温江区</option>
+            <option value="新都区">新都区</option>
+            <option value="新津县">新津县</option>
+        </select>
+        <br>
+        <div class="field-name">
+            <label for="detailsAddr">详细地址：</label>
+        </div>
+        <input type="text" id="detailsAddr"
+               name="detailsAddr">
+        <br>
+        <div class="field-name">
+            <label>兴趣/爱好：</label>
+        </div>
+        <label for="basketBall">篮球</label>
+        <input name="favorite"
+                type="checkbox" id="basketBall">
+        <label for="footBall">足球</label>
+        <input name="favorite"
+                type="checkbox" id="footBall">
+        <label for="swimming">游泳</label>
+        <input name="favorite"
+                type="checkbox" id="swimming">
+
+    </fieldset>
+    <br>
+    <div class="field-name">
+    </div>
+    <input type="submit" value="提交">
+    <input type="button" value="清空">
+</form>
+
+<script src="form.js"></script>
+</body>
+</html>
