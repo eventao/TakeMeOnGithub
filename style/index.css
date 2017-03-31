@@ -5,13 +5,25 @@ body{
     margin:0;
     padding:0;
 }
-
 .container{
     width:100%;
     height:100vh;
+    overflow:hidden;
+    position:relative;
 }
 .main-item{
     width:100%;
-    height:100%;
+    height:100vh;
     background:gray;
+}
+.main-item:nth-child(2){
+    background:red;
+}
+.item-wrapper{
+    width:100%;
+    height:auto;
+    position:absolute;
+    left:0;
+    top:0;
+    transition:top 0.5s;
 }
