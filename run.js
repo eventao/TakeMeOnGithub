@@ -1,8 +1,14 @@
 /**
  * Created by forli on 2017/3/29.
  */
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var router = express.Router();
 router.get("/students",function(req,res){
@@ -49,6 +55,9 @@ router.get("/students",function(req,res){
     res.json(data);
 });
 
+var userDb = require('./server/proceed/user');
+userDb.init(router);
+
 app.use("/",router);
 app.use("/",express.static(__dirname));
-app.listen(8123);
+app.listen(8013);

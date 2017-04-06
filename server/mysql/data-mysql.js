@@ -1,15 +1,19 @@
 /**
  * Created by forli on 2017/4/5.
  */
-var mysqlConf = require('../configurations/database');
+var mysqlConf = require('../configurations/database').mysql;
 var mysql = require('mysql');
-var connection = mysql.createConnection(mysqlConf.mysql);
 var result = {
     getUsers:function(){
+        var connection = mysql.createConnection(mysqlConf);
         connection.connect();
-        var queryText = "select * from 'user-information' as userInfo";
+        var queryText = "select * from userinfo as userInfo";
         return connection.query(queryText,null,function(err,rows,fields){
-            if(err)throw err;
+            console.log("returned ！");
+            if(err){
+                console.log(err);
+                return;
+            }
             console.log(rows);
             connection.end();
         });

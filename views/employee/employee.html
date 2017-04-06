@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../style/employee/employee.css">
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <td>用户名</td>
+                <td>邮箱</td>
+                <td>手机号</td>
+                <td>真实姓名</td>
+                <td>年龄</td>
+                <td>QQ</td>
+                <td>头像</td>
+                <td>创建时间</td>
+                <td>更新时间</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form action="/updateUser" method="post" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="user-info">
+                    <label for="userName">用户名：</label>
+                    <input type="text" id="userName"> <br>
+                    <label for="updateEmail">邮箱：</label>
+                    <input id="updateEmail" type="text"><br>
+                    <label for="mobile">手机号：</label>
+                    <input id="mobile" type="text"><br>
+                    <label for="realName">真实姓名：</label>
+                    <input id="realName" type="text"><br>
+                    <label for="age">年龄：</label>
+                    <input id="age" type="text"><br>
+                    <label for="qq">QQ：</label>
+                    <input id="qq" type="text"><br>
+                    <label for="avator">头像：</label>
+                    <input id="avator" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default"
+                       data-dismiss="modal" value="关闭" />
+                <input id="saveMsg" type="submit" value="保存"
+                       class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/scripts/employee/employee.js"></script>
+</body>
+</html>
