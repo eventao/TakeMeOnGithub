@@ -21,7 +21,10 @@ var sequelize = new Sequelize(
         },
         storage: 'path/to/database.sqlite'
     });
-var User = sequelize.define('userinfo', {
+
+var User = sequelize.define(
+    'userinfo',
+    {
     id:{
         type: Sequelize.STRING,
         primaryKey:true
@@ -36,13 +39,14 @@ var User = sequelize.define('userinfo', {
     email: {
         type: Sequelize.STRING
     },
-    mobileNumber: {
-        type: Sequelize.STRING,
-        field: 'mobile_number'
+    phoneNumber: {
+        type: Sequelize.STRING
     },
     realName: {
-        type: Sequelize.STRING,
-        field: 'real_name'
+        type: Sequelize.STRING
+    },
+    gender:{
+        type:Sequelize.INTEGER
     },
     age: {
         type: Sequelize.INTEGER
@@ -50,15 +54,14 @@ var User = sequelize.define('userinfo', {
     qq: {
         type: Sequelize.STRING
     },
-    icon: {
-        type: Sequelize.STRING
-    },
     remark: {
         type: Sequelize.STRING
     }
-}, {
-    freezeTableName: true
-});
+},
+    {
+        freezeTableName: true
+    }
+);
 
 exports.createUser = function(){
     return User.sync().then(function () {
@@ -70,7 +73,5 @@ exports.createUser = function(){
     });
 };
 exports.getUser = function(){
-    return User.findAll().then(function(r){
-        return r;
-    });
+    return User.findAll();
 };

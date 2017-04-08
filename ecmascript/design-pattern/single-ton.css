@@ -1,0 +1,21 @@
+.mask{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    display:none;
+    top:0;
+    left:0;
+    z-index: 1000;
+    background-color:rgba(0,0,0,0.5);
+}
+.mask .alert{
+    width:30%;
+    height:auto;
+    background:#fff;
+    color:#000;
+    text-align:center;
+    line-height:30px;
+    margin:20% auto 0 auto;
+    padding:20px 5px;
+    border-radius:5px;
+}

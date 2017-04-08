@@ -10,6 +10,10 @@ exports.mysql = {
     connectionLimit: 50,
     port:3306
 };
+
+
+
+
 exports.mongodb = {
 
 };
