@@ -1,14 +1,44 @@
 /**
  * Created by forli on 2017/4/6.
  */
+var gPageIndex = 0;
+var gPageSize = 8;
+var container = document.querySelector(".container");
 var dataBody = document.querySelector("#dataBody");
-function getData(){
+function setContainerHeight(height){
+    container.style.height = height + "px";
+    setContainerHeight = function(){
+
+    }
+}
+function getData(currentPageIndex){
     var xhr = new XMLHttpRequest();
-    xhr.open("get","/findUser");
+    xhr.open("get","/findUser?pageIndex="+currentPageIndex+"&pageSize="+gPageSize);
     xhr.onload = function(){
         var res = null;
         if(xhr.response){
             res = JSON.parse(xhr.response);
+            BootstrapPagination(
+                $("#paginations"),
+                {
+                    pageSize:8,
+                    //分页尺寸输出格式化字符串
+                    pageSizeListFormateString: "每页{pageSize}",
+                    //位于导航条左侧的输出信息格式化字符串
+                    leftFormateString: "{count}/{total}",
+                    //位于导航条右侧的输出信息格式化字符串
+                    rightFormateString: "{pageNumber}/{totalPages}",
+                    pageGroupSize:4,
+                    //记录总数。
+                    total: res.total,
+                    //当前页索引编号。从其开始（从0开始）的整数。
+                    pageIndex:gPageIndex,
+                    //当分页更改后引发此事件。
+                    pageChanged: function (pageIndex, pageSize) {
+                        gPageIndex = pageIndex;
+                        getData(gPageIndex);
+                    }
+                });
             var html = "";
             res.contents.forEach(function(employee){
                 html += "<tr data-uid='" + employee.id + "'>";
@@ -63,19 +93,21 @@ function getData(){
                 html += "</tr>";
             });
             dataBody.innerHTML = html;
+            setContainerHeight(container.offsetHeight);
         }
     };
     xhr.send();
 }
-getData();
+getData(gPageIndex);
 
 function deleteData(e){
     var tr = $(e).parent();
     var id = tr.attr("data-uid");
 }
+
 var mailInput = $("#updateEmail");
-function updateData(e){
-    var tr = $(e).parents("tr");
+function updateData(element){
+    var tr = $(element).parents("tr");
     var id = tr.attr("data-uid");
     mailInput.val(id);
     $('.modal').modal();

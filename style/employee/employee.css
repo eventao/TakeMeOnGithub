@@ -2,6 +2,11 @@
     width:800px;
     height:auto;
     margin:5px auto 0 auto;
+    position:relative;
+}
+#paginations{
+    position:absolute;
+    bottom:-55px;
 }
 .user-info{
     width:100%;

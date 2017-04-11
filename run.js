@@ -7,8 +7,6 @@ var app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-var jsonParser = bodyParser.json();
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var router = express.Router();
 router.get("/students",function(req,res){
@@ -54,10 +52,15 @@ router.get("/students",function(req,res){
     };
     res.json(data);
 });
-
+router.get("/user/details.html",function(req,res){
+    res.json({});
+});
 var userDb = require('./server/proceed/user');
 userDb.init(router);
 
 app.use("/",router);
 app.use("/",express.static(__dirname));
-app.listen(8013);
+var port = 8003;
+app.listen(port,function(){
+    console.log("server is running on "+port);
+});

@@ -10,7 +10,15 @@ exports.mysql = {
     connectionLimit: 50,
     port:3306
 };
-
+// exports.mysql = {
+//     host:'192.168.0.175',
+//     user:'hjun',
+//     password:'mysql',
+//     database:'takemeongithub-hjun',
+//     dialect:'mysql',
+//     connectionLimit: 50,
+//     port:3306
+// };
 
 
 
