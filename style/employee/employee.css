@@ -1,5 +1,5 @@
 .container{
-    width:800px;
+    width:auto;
     height:auto;
     margin:5px auto 0 auto;
     position:relative;
@@ -19,3 +19,10 @@
     display:inline-block;
 }
 
+#avator{
+    display:inline;
+}
+.employee-icon{
+    width:60px;
+    height:auto;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket.io</title>
+</head>
+<body>
+<div id="container"></div>
+<input type="text" id="chatInput" title="输入聊天" >
+<input type="button" value="发送" id="sendMsg" >
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var container = document.querySelector("#container");
+    var sendBtn = document.querySelector("#sendMsg");
+    var chatInput = document.querySelector("#chatInput");
+
+    var socket = io('http://localhost:8003?user=eventao');
+    socket.on("now",function(data){
+        container.innerHTML = "服务器时间为：" + data;
+    });
+    sendBtn.onclick = function(){
+        socket.emit("chat",chatInput.value);
+    };
+    socket.on("chat",function(data){
+        console.log(data);
+    });
+</script>
+</body>
+</html>

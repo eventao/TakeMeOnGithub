@@ -4,10 +4,17 @@
   "devDependencies": {
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
+    "connect-busboy": "^0.0.2",
     "express": "^4.15.2",
+    "formidable": "^1.1.1",
+    "fs-extra": "^2.1.2",
     "jquery": "^3.2.1",
     "mysql": "^2.13.0",
     "node-mysql": "^0.4.2",
-    "sequelize": "^3.30.4"
+    "node-uuid": "^1.4.8",
+    "sequelize": "^3.30.4",
+    "socket.io": "^1.7.3",
+    "vue": "^2.2.6",
+    "vue-router": "^2.5.2"
   }
 }

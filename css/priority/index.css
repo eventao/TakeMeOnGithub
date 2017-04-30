@@ -1,0 +1,25 @@
+.A{
+    color:blue;
+}
+.B{
+    color:red;
+}
+.C{
+    color:yellow;
+}
+#first{
+    background:yellow !important;
+}
+
+[data-face]{
+    background:blue;
+}
+.face{
+    width:300px;
+    height:130px;
+    background:pink;
+}
+div{
+    background:black;
+}
+
